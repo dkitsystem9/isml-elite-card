@@ -2,7 +2,8 @@
   "name": "isml-elite-card",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://your-github-username.github.io/isml-elite-card",
+  "homepage": "https://dkitsystem9.github.io/isml-elite-card",
+
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
     "@testing-library/dom": "^10.4.0",

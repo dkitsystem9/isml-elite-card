@@ -7,12 +7,11 @@ import TermsAndConditions from './components/LandingPage/TermsAndConditions';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/isml-elite-card">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-    
       </Routes>
     </Router>
   );
