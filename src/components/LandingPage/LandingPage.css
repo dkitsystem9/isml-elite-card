@@ -1,0 +1,344 @@
+.landing-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fbfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  padding: 2rem 1rem;
+  color: white;
+  text-align: left;
+}
+
+.logo-box {
+  margin-bottom: 1rem;
+}
+
+.hero-logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  padding: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text-box {
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Plans Section */
+.plans-section {
+  padding: 3rem 1rem;
+  background: #f0f9ff;
+}
+
+.plan-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .plan-card-grid {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+}
+
+/* Card Styling */
+.plan-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+  min-height: 100%;
+  height: auto;
+  box-sizing: border-box;
+  flex: 1 1 300px;
+}
+
+.plan-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hover Overlay */
+.plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: transparent;
+  transition: background 0.4s ease;
+}
+
+/* Z-Index fixes for hover content */
+.plan-card .plan-content,
+.plan-card .plan-button {
+  z-index: 1;
+  position: relative;
+}
+
+/* Hover Classes */
+.card-hover-blue:hover::before {
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0.15));
+}
+
+.card-hover-green:hover::before {
+  background: radial-gradient(circle at center, rgba(34, 197, 94, 0.35), rgba(34, 197, 94, 0.15));
+}
+
+.card-hover-red:hover::before {
+  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.35), rgba(239, 68, 68, 0.15));
+}
+
+.card-hover-blue:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.35);
+}
+
+.card-hover-green:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.35);
+}
+
+.card-hover-red:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(239, 68, 68, 0.35);
+}
+
+.card-hover-blue:hover h2,
+.card-hover-blue:hover h3 {
+  color: #3b82f6;
+}
+
+.card-hover-green:hover h2,
+.card-hover-green:hover h3 {
+  color: #22c55e;
+}
+
+.card-hover-red:hover h2,
+.card-hover-red:hover h3 {
+  color: #ef4444;
+}
+
+.plan-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.plan-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.original-price {
+  font-size: 0.9rem;
+  color: #888;
+  text-decoration: line-through;
+  margin-bottom: 1rem;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.plan-card ul li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Button Styling */
+.plan-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: transform 0.2s ease, background 0.3s ease;
+  margin-top: auto;
+  align-self: center;
+}
+
+.plan-button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Highlighted Card */
+.highlight-card {
+  background: linear-gradient(to bottom right, #2563eb, #38bdf8);
+  color: white;
+}
+
+.highlight-card .plan-button {
+  background: white;
+  color: #2563eb;
+}
+
+.highlight-card .plan-button:hover {
+  background: #e0edff;
+}
+
+/* MOST POPULAR Badge */
+.popular-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #ffd700, #ffbb00);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1f2937;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  animation: pop-fade 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes pop-fade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 2.5rem 1rem;
+  background: #fff;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-copy {
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* Responsive Enhancements */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-copy {
+    text-align: right;
+  }
+
+  .hero-flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: left;
+  }
+
+  .logo-box {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .faq-section h2 {
+    font-size: 2rem;
+  }
+}
