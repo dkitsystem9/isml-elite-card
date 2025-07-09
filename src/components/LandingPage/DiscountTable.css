@@ -17,27 +17,41 @@
   margin-bottom: 1.5rem;
 }
 
+/* Table scroll wrapper */
 .table-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
 }
 
+/* Optional scrollbar styling */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+}
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Main table */
 .discount-table {
-  width: 75%;
-  min-width: 500px;
+  width: 90%; /* Reduced from 100% to 90% for desktop spacing */
+  max-width: 1000px;
+  min-width: 600px;
+  margin: 0 auto;
   border-collapse: collapse;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   background: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   overflow: hidden;
 }
 
+/* Table cells */
 .discount-table th,
 .discount-table td {
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   text-align: center;
   border-bottom: 1px solid #e5e7eb;
 }
@@ -58,12 +72,15 @@
   background-color: #f9fafb;
 }
 
+/* Tablets */
 @media (max-width: 900px) {
   .discount-table {
-    width: 90%;
+    width: 95%;
+    font-size: 0.88rem;
   }
 }
 
+/* Phones */
 @media (max-width: 600px) {
   .table-title {
     font-size: 1.3rem;
@@ -75,11 +92,24 @@
 
   .discount-table {
     width: 100%;
-    font-size: 0.85rem;
+    font-size: 0.83rem;
+    min-width: 500px; /* For horizontal scroll */
   }
 
   .discount-table th,
   .discount-table td {
-    padding: 0.5rem;
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+  .discount-table {
+    font-size: 0.78rem;
+  }
+
+  .discount-table th,
+  .discount-table td {
+    padding: 0.45rem;
   }
 }

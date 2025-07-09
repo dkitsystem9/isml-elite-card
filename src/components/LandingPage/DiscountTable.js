@@ -19,48 +19,49 @@ export default function DiscountTable() {
           </thead>
           <tbody>
             <tr>
-              <td>Master a Language (ML)</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>10%</td>
+              <td data-label="Program">Master a Language (ML)</td>
+              <td data-label="EduPass 💡">10%</td>
+              <td data-label="ScholarPass 🎓">10%</td>
+              <td data-label="InfinityPass 🚀">10%</td>
             </tr>
             <tr>
-              <td>International Diploma (ID)</td>
-              <td>10%</td>
-              <td>12%</td>
-              <td>12%</td>
+              <td data-label="Program">International Diploma (ID)</td>
+              <td data-label="EduPass 💡">10%</td>
+              <td data-label="ScholarPass 🎓">12%</td>
+              <td data-label="InfinityPass 🚀">12%</td>
             </tr>
             <tr>
-              <td>ID Fast Track</td>
-              <td>10%</td>
-              <td>10%</td>
-              <td>12%</td>
+              <td data-label="Program">ID Fast Track</td>
+              <td data-label="EduPass 💡">10%</td>
+              <td data-label="ScholarPass 🎓">10%</td>
+              <td data-label="InfinityPass 🚀">12%</td>
             </tr>
             <tr>
-              <td>Immersion Programs 🌍</td>
-              <td>❌</td>
-              <td>12%</td>
-              <td>15%</td>
+              <td data-label="Program">Immersion Programs 🌍</td>
+              <td data-label="EduPass 💡">❌</td>
+              <td data-label="ScholarPass 🎓">12%</td>
+              <td data-label="InfinityPass 🚀">15%</td>
             </tr>
             <tr>
-              <td>LMS Courses 💻</td>
-              <td>❌</td>
-              <td>5%</td>
-              <td>5%</td>
+              <td data-label="Program">LMS Courses 💻</td>
+              <td data-label="EduPass 💡">❌</td>
+              <td data-label="ScholarPass 🎓">5%</td>
+              <td data-label="InfinityPass 🚀">5%</td>
             </tr>
             <tr>
-              <td>Referral Bonus 🎁</td>
-              <td>❌</td>
-              <td>5%</td>
-              <td>5%</td>
+              <td data-label="Program">Referral Bonus 🎁</td>
+              <td data-label="EduPass 💡">❌</td>
+              <td data-label="ScholarPass 🎓">5%</td>
+              <td data-label="InfinityPass 🚀">5%</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      {/* ✅ Additional Benefits Table */}
-      <h2 className="table-title" style={{ marginTop: '2.5rem' }}> Additional Benefits</h2> 
-      
+      <h2 className="table-title" style={{ marginTop: '2.5rem' }}>
+        Additional Benefits
+      </h2>
+
       <div className="table-container">
         <table className="discount-table">
           <thead>
@@ -73,40 +74,40 @@ export default function DiscountTable() {
           </thead>
           <tbody>
             <tr>
-              <td>Online Access</td>
-              <td>✔️</td>
-              <td>✔️</td>
-              <td>✔️</td>
+              <td data-label="Particular">Online Access</td>
+              <td data-label="EduPass">✔️</td>
+              <td data-label="ScholarPass">✔️</td>
+              <td data-label="InfinityPass">✔️</td>
             </tr>
             <tr>
-              <td>Offline Access</td>
-              <td>❌</td>
-              <td>✔️</td>
-              <td>✔️</td>
+              <td data-label="Particular">Offline Access</td>
+              <td data-label="EduPass">❌</td>
+              <td data-label="ScholarPass">✔️</td>
+              <td data-label="InfinityPass">✔️</td>
             </tr>
             <tr>
-              <td>Study Abroad Guidance</td>
-              <td>❌</td>
-              <td>✔️</td>
-              <td>✔️</td>
+              <td data-label="Particular">Study Abroad Guidance</td>
+              <td data-label="EduPass">❌</td>
+              <td data-label="ScholarPass">✔️</td>
+              <td data-label="InfinityPass">✔️</td>
             </tr>
             <tr>
-              <td>3 Months Priority Support</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>✔️</td>
+              <td data-label="Particular">3 Months Priority Support</td>
+              <td data-label="EduPass">❌</td>
+              <td data-label="ScholarPass">❌</td>
+              <td data-label="InfinityPass">✔️</td>
             </tr>
             <tr>
-              <td>Internship Priority</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>✔️</td>
+              <td data-label="Particular">Internship Priority</td>
+              <td data-label="EduPass">❌</td>
+              <td data-label="ScholarPass">❌</td>
+              <td data-label="InfinityPass">✔️</td>
             </tr>
             <tr>
-              <td>Placement Assistance</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>✔️</td>
+              <td data-label="Particular">Placement Assistance</td>
+              <td data-label="EduPass">❌</td>
+              <td data-label="ScholarPass">❌</td>
+              <td data-label="InfinityPass">✔️</td>
             </tr>
           </tbody>
         </table>
