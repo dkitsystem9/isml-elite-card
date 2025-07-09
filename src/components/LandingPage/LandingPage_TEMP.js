@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 import card1 from "../../assets/ISML-Card1.png";
@@ -7,6 +7,7 @@ import card3 from "../../assets/ISML-Card3.png";
 import DiscountTable from "./DiscountTable";
 import AccordionFAQ from "./AccordionFAQ";
 import "./LandingPage.css";
+import { Link } from "react-router-dom";
 
 const plans = [
   {
@@ -22,7 +23,7 @@ const plans = [
     ],
     button: "Get EduPass",
     link: "https://rzp.io/rzp/edupass",
-    color: "blue", // For hover style
+    color: "blue",
   },
   {
     title: "ISML Elite ScholarPass",
@@ -39,7 +40,7 @@ const plans = [
     button: "Get ScholarPass",
     highlight: true,
     link: "https://rzp.io/rzp/scholarpass",
-    color: "green", // For hover style
+    color: "green",
   },
   {
     title: "ISML Elite InfinityPass",
@@ -56,13 +57,23 @@ const plans = [
     ],
     button: "Get InfinityPass",
     link: "https://rzp.io/rzp/infinitypass",
-    color: "red", // For hover style
+    color: "red",
   },
 ];
 
 const LandingPage = () => {
+  const [rotations, setRotations] = useState(plans.map(() => 0));
+
   const handleRedirect = (url) => {
     window.open(url, "_blank");
+  };
+
+  const handleHover = (index) => {
+    setRotations((prevRotations) => {
+      const updated = [...prevRotations];
+      updated[index] += 360;
+      return updated;
+    });
   };
 
   return (
@@ -78,7 +89,7 @@ const LandingPage = () => {
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            Unleash your language learning journey with exclusive perks through
+            Unleash your Language learning journey with exclusive perks through
             the ISML Elite Card.
           </motion.h1>
           <motion.p
@@ -87,7 +98,7 @@ const LandingPage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Choose your pass. Start learning smarter, faster, and more
+            Choose your pass. Start learning smarter, faster and more
             affordably.
           </motion.p>
         </div>
@@ -102,14 +113,36 @@ const LandingPage = () => {
               className={`plan-card card-hover-${plan.color} ${
                 plan.highlight ? "highlight-card" : ""
               }`}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
+              onMouseEnter={() => handleHover(index)}
             >
               {plan.highlight && (
-                <div className="popular-badge">★ Most Popular</div>
+                <div className="popular-badge">★ Most ★ Popular</div>
               )}
-              <img src={plan.image} alt={plan.title} className="card-image" />
+
+              <motion.div
+                animate={{ rotateY: rotations[index] }}
+                transition={{ duration: 1.9, ease: "easeInOut" }}
+                style={{
+                  perspective: 1000,
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <img
+                  src={plan.image}
+                  alt={plan.title}
+                  className="card-image"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "14px",
+                    marginBottom: "1rem",
+                    objectFit: "cover",
+                    willChange: "transform",
+                    backfaceVisibility: "hidden",
+                  }}
+                />
+              </motion.div>
+
               <div className="plan-content">
                 <h2>{plan.price}</h2>
                 <h3>{plan.title}</h3>
@@ -143,8 +176,8 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-links">
-          <a href="/terms-and-conditions">Terms & Conditions</a>
-          <a href="/privacy-policy">Privacy Policy</a>
+          <Link to="/terms-and-conditions">Terms & Conditions</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
         </div>
         <p>© {new Date().getFullYear()} ISML. All rights reserved.</p>
       </footer>

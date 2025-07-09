@@ -18,18 +18,19 @@
 }
 
 .table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   overflow-x: auto;
-  max-width: 100%;
 }
 
 .discount-table {
-  width: 100%;
+  width: 75%;
   min-width: 500px;
   border-collapse: collapse;
-  margin: 0 auto;
   font-size: 0.95rem;
   background: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -57,6 +58,12 @@
   background-color: #f9fafb;
 }
 
+@media (max-width: 900px) {
+  .discount-table {
+    width: 90%;
+  }
+}
+
 @media (max-width: 600px) {
   .table-title {
     font-size: 1.3rem;
@@ -67,6 +74,7 @@
   }
 
   .discount-table {
+    width: 100%;
     font-size: 0.85rem;
   }
 

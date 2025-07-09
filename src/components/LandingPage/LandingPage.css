@@ -1,12 +1,14 @@
+/* Base Styles */
 .landing-page {
   font-family: 'Poppins', sans-serif;
   background-color: #f9fbfd;
   color: #333;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* Hero Section */
+/* ================= HERO SECTION ================= */
 .hero-flex {
   display: flex;
   flex-direction: column;
@@ -14,7 +16,7 @@
   background: linear-gradient(to right, #4f46e5, #3b82f6);
   padding: 2rem 1rem;
   color: white;
-  text-align: left;
+  text-align: center;
 }
 
 .logo-box {
@@ -22,8 +24,8 @@
 }
 
 .hero-logo {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   background: white;
@@ -39,6 +41,7 @@
 .hero-title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero-subtitle {
@@ -46,7 +49,7 @@
   line-height: 1.6;
 }
 
-/* Plans Section */
+/* ================= PLANS SECTION ================= */
 .plans-section {
   padding: 3rem 1rem;
   background: #f0f9ff;
@@ -68,7 +71,7 @@
   }
 }
 
-/* Card Styling */
+/* ================= PLAN CARD STYLING ================= */
 .plan-card {
   background: white;
   border-radius: 15px;
@@ -83,15 +86,14 @@
   transition: all 0.4s ease;
   border: 2px solid transparent;
   overflow: visible;
-  min-height: 570px; /* Ensure enough space */
-  height: auto;
+  min-height: 570px;
   box-sizing: border-box;
   flex: 1 1 300px;
 }
 
 @media (max-width: 480px) {
   .plan-card {
-    min-height: 620px; /* Extra height for very small devices */
+    min-height: 620px;
   }
 }
 
@@ -103,7 +105,7 @@
   overflow: visible;
 }
 
-/* Hover Overlay */
+/* Hover Overlay Effect */
 .plan-card::before {
   content: "";
   position: absolute;
@@ -113,14 +115,13 @@
   transition: background 0.4s ease;
 }
 
-/* Z-Index fixes for hover content */
 .plan-card .plan-content,
 .plan-card .plan-button {
   z-index: 1;
   position: relative;
 }
 
-/* Hover Classes */
+/* Hover Effects by Color */
 .card-hover-blue:hover::before {
   background: radial-gradient(circle at center, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0.15));
 }
@@ -195,7 +196,7 @@
   font-size: 0.95rem;
 }
 
-/* Button Styling */
+/* ================= BUTTON ================= */
 .plan-button {
   background: #3b82f6;
   color: white;
@@ -215,28 +216,28 @@
   transform: scale(1.05);
 }
 
-/* Highlighted Card */
+/* ================= HIGHLIGHT CARD ================= */
 .highlight-card {
-  background: linear-gradient(to bottom right, #2563eb, #38bdf8);
-  color: white;
+  background: linear-gradient(to bottom right, white);
+  color: black;
 }
 
 .highlight-card .plan-button {
-  background: white;
-  color: #2563eb;
+  background: #2563eb;
+  color: white;
 }
 
 .highlight-card .plan-button:hover {
-  background: #e0edff;
+  background: #0769f1;
 }
 
-/* MOST POPULAR Badge */
+/* ================= MOST POPULAR BADGE ================= */
 .popular-badge {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(90deg, #ffd700, #ffbb00);
+  background: linear-gradient(90deg, #d8c03b);
   padding: 8px 18px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -246,7 +247,7 @@
   color: #1f2937;
   z-index: 3;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  animation: pop-fade 1.2s ease-in-out infinite alternate;
+  animation: pop-fade 0.2s ease-in-out infinite alternate;
 }
 
 @keyframes pop-fade {
@@ -260,7 +261,7 @@
   }
 }
 
-/* FAQ Section */
+/* ================= FAQ SECTION ================= */
 .faq-section {
   padding: 2.5rem 1rem;
   background: #fff;
@@ -272,7 +273,7 @@
   margin-bottom: 2rem;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 .footer {
   background: #1e293b;
   color: #cbd5e1;
@@ -311,7 +312,7 @@
   color: #94a3b8;
 }
 
-/* Responsive Enhancements */
+/* ================= MEDIA QUERIES ================= */
 @media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
@@ -348,4 +349,38 @@
   .faq-section h2 {
     font-size: 2rem;
   }
+}
+
+/* Optional: Hide scrollbars for plan cards in Firefox and WebKit */
+.plan-card::-webkit-scrollbar {
+  display: none;
+}
+
+.plan-card {
+  scrollbar-width: none; /* Firefox */
+}
+.tilt-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.tilt-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transform-origin: center;
+}
+.plan-card {
+  overflow: visible; /* Ensure no cropping */
+}
+
+.card-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }

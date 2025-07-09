@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+    
       </Routes>
     </Router>
   );
