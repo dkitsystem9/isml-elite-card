@@ -26,10 +26,10 @@
 .hero-logo {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
   background: white;
-  padding: 5px;
+  padding: 24px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -71,38 +71,28 @@
   }
 }
 
-/* ================= PLAN CARD STYLING ================= */
+/* ================= PLAN CARD ================= */
 .plan-card {
   background: white;
   border-radius: 15px;
-  padding: 2rem 1.5rem;
+  padding: 1.6rem 1.2rem;
   width: 100%;
   max-width: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
   position: relative;
   transition: all 0.4s ease;
   border: 2px solid transparent;
-  overflow: visible;
-  min-height: 570px;
+  min-height: 540px;
   box-sizing: border-box;
-  flex: 1 1 300px;
 }
 
-@media (max-width: 480px) {
-  .plan-card {
-    min-height: 620px;
-  }
-}
-
-.plan-content {
-  flex-grow: 1;
+.plan-card .plan-content {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: space-between;
-  overflow: visible;
 }
 
 /* Hover Overlay Effect */
@@ -117,82 +107,71 @@
 
 .plan-card .plan-content,
 .plan-card .plan-button {
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
 
-/* Hover Effects by Color */
+/* Hover Effects */
 .card-hover-blue:hover::before {
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0.15));
+  background: radial-gradient(circle at center, rgba(59,130,246,0.35), rgba(59,130,246,0.15));
 }
-
 .card-hover-green:hover::before {
-  background: radial-gradient(circle at center, rgba(34, 197, 94, 0.35), rgba(34, 197, 94, 0.15));
+  background: radial-gradient(circle at center, rgba(34,197,94,0.35), rgba(34,197,94,0.15));
 }
-
 .card-hover-red:hover::before {
-  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.35), rgba(239, 68, 68, 0.15));
+  background: radial-gradient(circle at center, rgba(239,68,68,0.35), rgba(239,68,68,0.15));
 }
 
 .card-hover-blue:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 15px 40px rgba(59,130,246,0.35);
 }
-
 .card-hover-green:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.35);
+  box-shadow: 0 15px 40px rgba(34,197,94,0.35);
 }
-
 .card-hover-red:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(239, 68, 68, 0.35);
+  box-shadow: 0 15px 40px rgba(239,68,68,0.35);
 }
 
 .card-hover-blue:hover h2,
 .card-hover-blue:hover h3 {
   color: #3b82f6;
 }
-
 .card-hover-green:hover h2,
 .card-hover-green:hover h3 {
   color: #22c55e;
 }
-
 .card-hover-red:hover h2,
 .card-hover-red:hover h3 {
   color: #ef4444;
 }
 
+/* Headers */
 .plan-card h2 {
   font-size: 2.2rem;
-  margin-bottom: 0.3rem;
-  transition: color 0.3s ease;
+  margin-bottom: 0.2rem;
 }
-
 .plan-card h3 {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   font-weight: 600;
-  transition: color 0.3s ease;
 }
-
 .original-price {
   font-size: 0.9rem;
   color: #888;
   text-decoration: line-through;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
-
 .plan-card ul {
   list-style: none;
   padding: 0;
   text-align: left;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
-
 .plan-card ul li {
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
   font-size: 0.95rem;
 }
 
@@ -206,14 +185,22 @@
   cursor: pointer;
   font-weight: bold;
   width: 100%;
-  transition: transform 0.2s ease, background 0.3s ease;
   margin-top: 1rem;
-  align-self: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-sizing: border-box;
 }
 
 .plan-button:hover {
-  background: #2563eb;
   transform: scale(1.05);
+}
+.card-hover-blue:hover .plan-button {
+  background: #2563eb;
+}
+.card-hover-green:hover .plan-button {
+  background: #22c55e;
+}
+.card-hover-red:hover .plan-button {
+  background: #ef4444;
 }
 
 /* ================= HIGHLIGHT CARD ================= */
@@ -221,12 +208,9 @@
   background: linear-gradient(to bottom right, white);
   color: black;
 }
-
 .highlight-card .plan-button {
   background: #2563eb;
-  color: white;
 }
-
 .highlight-card .plan-button:hover {
   background: #0769f1;
 }
@@ -246,31 +230,36 @@
   letter-spacing: 1px;
   color: #1f2937;
   z-index: 3;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   animation: pop-fade 0.2s ease-in-out infinite alternate;
 }
-
 @keyframes pop-fade {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.05);
-    opacity: 0.85;
-  }
+  0% {transform: translate(-50%, -50%) scale(1); opacity: 1;}
+  100% {transform: translate(-50%, -50%) scale(1.05); opacity: 0.85;}
 }
 
-/* ================= FAQ SECTION ================= */
-.faq-section {
-  padding: 2.5rem 1rem;
-  background: #fff;
-  text-align: center;
-}
-
-.faq-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
+/* ================= MEDIA QUERIES ================= */
+@media (min-width: 768px) {
+  .hero-flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 4rem 2rem;
+  }
+  .logo-box {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+  .hero-title {
+    font-size: 2.6rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .faq-section h2 {
+    font-size: 2rem;
+  }
 }
 
 /* ================= FOOTER ================= */
@@ -280,39 +269,30 @@
   padding: 2rem 1rem;
   font-size: 0.9rem;
 }
-
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-
 .footer-links {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .footer-links a {
   color: #93c5fd;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
-  color: #ffffff;
-  text-decoration: underline;
+  color: #fff;
 }
-
 .footer-copy {
   text-align: center;
   color: #94a3b8;
 }
-
-/* ================= MEDIA QUERIES ================= */
 @media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
@@ -320,67 +300,20 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
   .footer-copy {
     text-align: right;
   }
-
-  .hero-flex {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 2rem;
-    text-align: left;
-  }
-
-  .logo-box {
-    margin-right: 2rem;
-    margin-bottom: 0;
-  }
-
-  .hero-title {
-    font-size: 2.6rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .faq-section h2 {
-    font-size: 2rem;
-  }
 }
 
-/* Optional: Hide scrollbars for plan cards in Firefox and WebKit */
+/* ================= MISC ================= */
 .plan-card::-webkit-scrollbar {
   display: none;
 }
-
 .plan-card {
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
-.tilt-icons {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.tilt-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  transform-origin: center;
-}
-.plan-card {
-  overflow: visible; /* Ensure no cropping */
-}
-
-.card-image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+.faq-section {
+  padding: 2.5rem 1rem;
+  background: #fff;
+  text-align: center;
 }

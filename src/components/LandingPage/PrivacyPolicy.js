@@ -1,45 +1,52 @@
-import React from 'react';
-import './PrivacyPolicy.css'; // Assuming you might want to add styles
+import React, { useEffect } from 'react';
+import './PrivacyPolicy.css'; // Reuse CSS
 
 function PrivacyPolicy() {
-  // Function to handle smooth scrolling (will be added to links later)
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -60; // Adjust for fixed header if present
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
   return (
     <div className="privacy-policy-container">
-      {/* Breadcrumbs Placeholder */}
-      {/* Removed breadcrumbs div */}
-
       <div className="privacy-policy-main-content">
         <div className="privacy-policy-sidebar">
-          {/* The sidebar content will be styled to be on the left */}
           <h3>Privacy Policy</h3>
           <ul>
-            <li><a href="#what-this-policy-covers" onClick={(e) => { e.preventDefault(); scrollToSection('what-this-policy-covers'); }}>What this policy covers</a></li>
-            <li><a href="#information-we-collect" onClick={(e) => { e.preventDefault(); scrollToSection('information-we-collect'); }}>Information We Collect</a></li>
-            <li><a href="#legal-basis-processing" onClick={(e) => { e.preventDefault(); scrollToSection('legal-basis-processing'); }}>Legal Basis for Data Processing</a></li>
-            <li><a href="#how-we-use-info" onClick={(e) => { e.preventDefault(); scrollToSection('how-we-use-info'); }}>How We Use Your Information</a></li>
-            <li><a href="#data-sharing" onClick={(e) => { e.preventDefault(); scrollToSection('data-sharing'); }}>Data Sharing & Third-Party Disclosures</a></li>
-            <li><a href="#international-transfers" onClick={(e) => { e.preventDefault(); scrollToSection('international-transfers'); }}>International Data Transfers</a></li>
-            <li><a href="#data-retention" onClick={(e) => { e.preventDefault(); scrollToSection('data-retention'); }}>Data Retention Policy</a></li>
-            <li><a href="#your-rights" onClick={(e) => { e.preventDefault(); scrollToSection('your-rights'); }}>Your Rights Under GDPR & Indian Data Protection Laws</a></li>
-            <li><a href="#cookies" onClick={(e) => { e.preventDefault(); scrollToSection('cookies'); }}>Cookies & Tracking Technologies</a></li>
-            <li><a href="#data-security" onClick={(e) => { e.preventDefault(); scrollToSection('data-security'); }}>Data Security Measures</a></li>
-            <li><a href="#third-party-links" onClick={(e) => { e.preventDefault(); scrollToSection('third-party-links'); }}>Third-Party Links</a></li>
-            <li><a href="#changes-to-policy" onClick={(e) => { e.preventDefault(); scrollToSection('changes-to-policy'); }}>Changes to This Privacy Policy</a></li>
-            <li><a href="#contact-us" onClick={(e) => { e.preventDefault(); scrollToSection('contact-us'); }}>Contact Us</a></li>
+            {[
+              ['what-this-policy-covers', 'What this policy covers'],
+              ['information-we-collect', 'Information We Collect'],
+              ['legal-basis-processing', 'Legal Basis for Data Processing'],
+              ['how-we-use-info', 'How We Use Your Information'],
+              ['data-sharing', 'Data Sharing & Third-Party Disclosures'],
+              ['international-transfers', 'International Data Transfers'],
+              ['data-retention', 'Data Retention Policy'],
+              ['your-rights', 'Your Rights Under GDPR & Indian Laws'],
+              ['cookies', 'Cookies & Tracking Technologies'],
+              ['data-security', 'Data Security Measures'],
+              ['third-party-links', 'Third-Party Links'],
+              ['changes-to-policy', 'Changes to This Privacy Policy'],
+              ['contact-us', 'Contact Us'],
+            ].map(([id, label]) => (
+              <li key={id}>
+                <a href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollToSection(id); }}>{label}</a>
+              </li>
+            ))}
           </ul>
-          {/* Add other sidebar items as needed */}
         </div>
+
         <div className="privacy-policy-content">
-      <h1>Privacy Policy</h1>
-          
-          <p className="effective-date">Effective starting: October 2, 2024 (<a href="#">view archived versions</a>) {/* Placeholder for effective date and link */}</p>
+          <h1>Privacy Policy</h1>
+          <p className="effective-date">Effective Date: October 2, 2024</p>
 
           <h2 id="what-this-policy-covers">What this policy covers</h2>
           <p>
@@ -49,10 +56,10 @@ function PrivacyPolicy() {
           <ul className="privacy-policy-intro-links">
             <li><a href="#information-we-collect" onClick={(e) => { e.preventDefault(); scrollToSection('information-we-collect'); }}>What information we collect about you</a></li>
             <li><a href="#how-we-use-info" onClick={(e) => { e.preventDefault(); scrollToSection('how-we-use-info'); }}>How we use information we collect</a></li>
-            <li><a href="#data-sharing" onClick={(e) => { e.preventDefault(); scrollToSection('data-sharing'); }}>How we disclose information we collect</a></li>
-            <li><a href="#data-security" onClick={(e) => { e.preventDefault(); scrollToSection('data-security'); }}>How we store and secure information we collect</a></li>
+            <li><a href="#data-sharing" onClick={(e) => { e.preventDefault(); scrollToSection('data-sharing'); }}>How we disclose information</a></li>
+            <li><a href="#data-security" onClick={(e) => { e.preventDefault(); scrollToSection('data-security'); }}>How we secure your data</a></li>
             <li><a href="#data-retention" onClick={(e) => { e.preventDefault(); scrollToSection('data-retention'); }}>How long we keep information</a></li>
-            <li><a href="#your-rights" onClick={(e) => { e.preventDefault(); scrollToSection('your-rights'); }}>How to access and control your information</a></li>
+            <li><a href="#your-rights" onClick={(e) => { e.preventDefault(); scrollToSection('your-rights'); }}>How to control your information</a></li>
           </ul>
 
           <h2 id="information-we-collect">1. Information We Collect</h2>
@@ -61,107 +68,93 @@ function PrivacyPolicy() {
           <h3>1.1 Personal Information</h3>
           <ul>
             <li>Full name, email address, phone number, and postal address</li>
-            <li>Date of birth, gender, nationality, and educational background (for course enrollment)</li>
-            <li>Payment details for course registration (processed securely via third-party payment providers)</li>
-            <li>Any other details you voluntarily provide (e.g., inquiries, feedback, or job applications)</li>
+            <li>Date of birth, gender, nationality, and education background</li>
+            <li>Payment information (via third-party providers)</li>
+            <li>Details you provide voluntarily (inquiries, forms, etc.)</li>
           </ul>
 
           <h3>1.2 Non-Personal Information</h3>
           <ul>
-            <li>Browser type, device information, and operating system</li>
-            <li>IP address and geographic location (if enabled by your device)</li>
-            <li>Website usage data, such as pages visited and time spent on our site</li>
+            <li>Browser type, device, OS</li>
+            <li>IP address, geolocation (if enabled)</li>
+            <li>Website behavior (pages viewed, time spent, etc.)</li>
           </ul>
 
-          <h2 id="legal-basis-processing">2. Legal Basis for Data Processing (GDPR & DPDP Compliance)</h2>
-          <p>We process your data based on:</p>
+          <h2 id="legal-basis-processing">2. Legal Basis for Data Processing</h2>
+          <p>We process data under GDPR and India's DPDP Act based on:</p>
           <ul>
-            <li><strong>Consent</strong> – When you voluntarily provide personal data (e.g., signing up for courses or newsletters).</li>
-            <li><strong>Contractual Necessity</strong> – To provide educational services as per your enrollment.</li>
-            <li><strong>Legitimate Interests</strong> – To improve our services and user experience.</li>
-            <li><strong>Legal Obligation</strong> – To comply with regulatory requirements under Indian law and GDPR.</li>
+            <li><strong>Consent</strong> – User-submitted data voluntarily</li>
+            <li><strong>Contract</strong> – For educational services</li>
+            <li><strong>Legitimate Interests</strong> – Platform improvement</li>
+            <li><strong>Legal Obligation</strong> – Compliance purposes</li>
           </ul>
-          <p>You have the right to withdraw your consent at any time.</p>
 
           <h2 id="how-we-use-info">3. How We Use Your Information</h2>
           <p>Your data is used for:</p>
           <ul>
-            <li>Processing course enrollments and providing educational services</li>
-            <li>Sending course updates, exam schedules, and administrative communications</li>
-            <li>Personalizing user experience and improving website functionality</li>
-            <li>Processing payments securely and preventing fraudulent transactions</li>
-            <li>Complying with legal and regulatory requirements</li>
+            <li>Processing enrollment and course delivery</li>
+            <li>Sending alerts, updates, and communications</li>
+            <li>Enhancing user experience and analytics</li>
+            <li>Secure payment and fraud prevention</li>
+            <li>Compliance with applicable laws</li>
           </ul>
-          <p>We do not sell, rent, or trade your personal data.</p>
 
           <h2 id="data-sharing">4. Data Sharing & Third-Party Disclosures</h2>
-          <p>We may share your data with:</p>
+          <p>We may share data with:</p>
           <ul>
-            <li>Service providers (e.g., payment gateways, email platforms, cloud storage)</li>
-            <li>Government authorities when required by law</li>
-            <li>Accredited institutions or partners for certification, training, or placements</li>
+            <li>Payment providers, email/SMS services, analytics tools</li>
+            <li>Accredited partners for certification or hiring</li>
+            <li>Law enforcement if legally required</li>
           </ul>
-          <p>All third-party providers comply with GDPR, DPDP Act, and IT Act security standards.</p>
 
-          <h2 id="international-transfers">5. International Data Transfers (GDPR Compliance)</h2>
-          <p>If we transfer your data outside the European Economic Area (EEA), we ensure adequate safeguards are in place, such as:</p>
+          <h2 id="international-transfers">5. International Data Transfers</h2>
+          <p>If data is transferred outside India/EEA:</p>
           <ul>
-            <li>Data Protection Agreements with third parties</li>
-            <li>Standard Contractual Clauses (SCCs) approved by the European Commission</li>
+            <li>We apply Standard Contractual Clauses (SCCs)</li>
+            <li>Ensure recipients follow strict data protections</li>
           </ul>
 
           <h2 id="data-retention">6. Data Retention Policy</h2>
-          <p>We retain your personal data only for as long as necessary:</p>
           <ul>
-            <li>Course-related data: 5 years after completion</li>
-            <li>Financial transaction data: As per tax & legal requirements</li>
-            <li>Marketing preferences: Until you opt-out</li>
+            <li>Course data: 5 years post-completion</li>
+            <li>Billing & payment: As required by law</li>
+            <li>Marketing consent: Until withdrawal</li>
           </ul>
-          <p>Upon request, we delete or anonymize data per GDPR and DPDP guidelines.</p>
+          <p>Data is securely deleted or anonymized after the retention period.</p>
 
-          <h2 id="your-rights">7. Your Rights Under GDPR & Indian Data Protection Laws</h2>
-          <p>Under GDPR (for EU users), you have the right to:</p>
+          <h2 id="your-rights">7. Your Rights Under GDPR & Indian Laws</h2>
           <ul>
-            <li> Access, correct, or delete your data</li>
-            <li> Restrict or object to processing</li>
-            <li> Data portability (receive your data in a structured format)</li>
-            <li> Lodge a complaint with a Data Protection Authority (DPA)</li>
+            <li>Access, correct, or delete your data</li>
+            <li>Withdraw consent at any time</li>
+            <li>Restrict or object to processing</li>
+            <li>Request data portability (structured format)</li>
+            <li>Lodge a complaint with a regulator (DPA in EU or Indian DPBI)</li>
           </ul>
-
-          <p>Under the DPDP Act & IT Act (India), you have the right to:</p>
-          <ul>
-            <li> Know how your data is being collected and used</li>
-            <li> Seek correction or deletion of your personal data</li>
-            <li> Withdraw consent at any time</li>
-          </ul>
-
-          <p>To exercise these rights, contact us at learnwithisml@iypan.in.</p>
 
           <h2 id="cookies">8. Cookies & Tracking Technologies</h2>
-          <p>We use cookies to enhance user experience. You can control or disable cookies via your browser settings.</p>
+          <p>We use cookies to analyze traffic and personalize content. You may disable cookies through browser settings.</p>
 
           <h2 id="data-security">9. Data Security Measures</h2>
-          <p>We implement:</p>
           <ul>
-            <li>Encryption for data storage and transmission</li>
-            <li>Secure servers with restricted access</li>
-            <li>Regular security audits to prevent unauthorized access</li>
+            <li>End-to-end encryption</li>
+            <li>Firewall-protected servers</li>
+            <li>Role-based admin access</li>
+            <li>Regular penetration testing</li>
           </ul>
-          <p>However, no system is 100% secure. You share data at your own risk.</p>
+          <p>No system is completely secure; use is at your own risk.</p>
 
           <h2 id="third-party-links">10. Third-Party Links</h2>
-          <p>Our website may contain links to external websites. We are not responsible for their privacy practices. Please review their policies before sharing data.</p>
+          <p>Our site may link to external websites. Please review their privacy policies before submitting any personal data.</p>
 
           <h2 id="changes-to-policy">11. Changes to This Privacy Policy</h2>
-          <p>We may update this policy periodically. Significant changes will be notified via email or website notice.</p>
+          <p>We may update this Privacy Policy occasionally. Major changes will be posted with a notification on our site or via email.</p>
 
           <h2 id="contact-us">12. Contact Us</h2>
-          <p>For privacy-related inquiries or to exercise your rights, contact:</p>
           <p>
-            <strong>Indian School for Modern Languages (ISML)</strong><br/>
-            IYPAN Educational Centre Pvt. Ltd.<br/>
-            Email: <a href="mailto:learnwithisml@iypan.in">learnwithisml@iypan.in</a><br/>
-            Phone: <a href="tel:+91-7338881781">+91-7338881781</a>
+            <strong>Indian School for Modern Languages (ISML)</strong><br />
+            IYPAN Educational Centre Pvt. Ltd.<br />
+            📧 <a href="mailto:learnwithisml@iypan.in">learnwithisml@iypan.in</a><br />
+            📞 <a href="tel:+91-7338881781">+91-7338881781</a>
           </p>
         </div>
       </div>
@@ -169,4 +162,4 @@ function PrivacyPolicy() {
   );
 }
 
-export default PrivacyPolicy; 
+export default PrivacyPolicy;

@@ -144,9 +144,11 @@ const LandingPage = () => {
               </motion.div>
 
               <div className="plan-content">
-                <h2>{plan.price}</h2>
-                <h3>{plan.title}</h3>
-                <p className="original-price">Original: {plan.original}</p>
+                <div className="plan-header-fixed">
+                  <h2>{plan.price}</h2>
+                  <h3>{plan.title}</h3>
+                  <p className="original-price">Original: {plan.original}</p>
+                </div>
                 <ul>
                   {plan.features.map((feature, i) => (
                     <li key={i}>✔️ {feature}</li>
