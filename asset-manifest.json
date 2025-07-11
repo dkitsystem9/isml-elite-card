@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/isml-elite-card/static/css/main.5fba514d.css",
-    "main.js": "/isml-elite-card/static/js/main.d53143dd.js",
+    "main.css": "/isml-elite-card/static/css/main.7f765adb.css",
+    "main.js": "/isml-elite-card/static/js/main.2c59958e.js",
     "static/js/453.8054d99d.chunk.js": "/isml-elite-card/static/js/453.8054d99d.chunk.js",
+    "static/media/ISML-Card3.png": "/isml-elite-card/static/media/ISML-Card3.c272154288e9fe0d9a89.png",
+    "static/media/ISML-Card2.png": "/isml-elite-card/static/media/ISML-Card2.67e054290e01bc1d41e8.png",
     "static/media/ISML-Card1.png": "/isml-elite-card/static/media/ISML-Card1.a51fd2c1e92198d27db2.png",
-    "static/media/ISML-Card3.png": "/isml-elite-card/static/media/ISML-Card3.803b41569d0808851452.png",
-    "static/media/ISML-Card2.png": "/isml-elite-card/static/media/ISML-Card2.eb070eb4cb1287de553d.png",
+    "static/media/logo.png": "/isml-elite-card/static/media/logo.08577b8105f4cf0275ed.png",
     "index.html": "/isml-elite-card/index.html",
-    "main.5fba514d.css.map": "/isml-elite-card/static/css/main.5fba514d.css.map",
-    "main.d53143dd.js.map": "/isml-elite-card/static/js/main.d53143dd.js.map",
+    "main.7f765adb.css.map": "/isml-elite-card/static/css/main.7f765adb.css.map",
+    "main.2c59958e.js.map": "/isml-elite-card/static/js/main.2c59958e.js.map",
     "453.8054d99d.chunk.js.map": "/isml-elite-card/static/js/453.8054d99d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fba514d.css",
-    "static/js/main.d53143dd.js"
+    "static/css/main.7f765adb.css",
+    "static/js/main.2c59958e.js"
   ]
 }
